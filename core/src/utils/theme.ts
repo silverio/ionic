@@ -1,4 +1,4 @@
-import { CssClassMap, Mode } from '../interface';
+import { CssClassMap, Mode, RouterDirection } from '../interface';
 
 /**
  * Create the mode and color classes for the component based on the classes passed in
@@ -64,15 +64,13 @@ export function getClassMap(classes: string | string[] | undefined): CssClassMap
   return map;
 }
 
-export type RouterDirection = 'forward' | 'back';
-
-export async function openURL(win: Window, url: string|undefined, ev: Event, direction: RouterDirection = 'forward') {
+export async function openURL(win: Window, url: string|undefined, ev: Event, direction?: RouterDirection) {
   if (url && url[0] !== '#' && url.indexOf('://') === -1) {
     const router = win.document.querySelector('ion-router');
     if (router) {
       ev && ev.preventDefault();
       await router.componentOnReady();
-      return router.push(url, direction === 'back' ? -1 : 1);
+      return router.push(url, direction);
     }
   }
   return Promise.resolve();

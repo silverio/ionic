@@ -3,7 +3,7 @@ import { ViewLifecycle } from '../..';
 import {
   Animation, ComponentProps, Config, FrameworkDelegate, GestureDetail, Mode,
   NavComponent, NavOptions, NavOutlet, NavResult, QueueController, RouteID,
-  RouteWrite, RouterDirection, TransitionDoneFn, TransitionInstruction } from '../../interface';
+  RouteWrite, RouterIntent, TransitionDoneFn, TransitionInstruction } from '../../interface';
 import { assert } from '../../utils/helpers';
 import { TransitionOptions, lifecycle, transition } from '../../utils/transition';
 import { ViewController, ViewState, convertToViews, matches } from './view-controller';
@@ -172,7 +172,7 @@ export class Nav implements NavOutlet {
   }
 
   @Method()
-  setRouteId(id: string, params: any, direction: number): Promise<RouteWrite> {
+  setRouteId(id: string, params: any, direction: RouterIntent): Promise<RouteWrite> {
     const active = this.getActive();
     if (matches(active, id, params)) {
       return Promise.resolve({
@@ -180,8 +180,6 @@ export class Nav implements NavOutlet {
         element: active.element
       });
     }
-
-    const viewController = this.views.find(v => matches(v, id, params));
 
     let resolve: (result: RouteWrite) => void;
     const promise = new Promise<RouteWrite>((r) => resolve = r);
@@ -202,14 +200,19 @@ export class Nav implements NavOutlet {
         return p;
       }
     };
-    if (viewController) {
-      finish = this.popTo(viewController, {...commonOpts, direction: 'back'});
-    } else if (direction === 1) {
-      finish = this.push(id, params, commonOpts);
-    } else if (direction === -1) {
-      finish = this.setRoot(id, params, {...commonOpts, direction: 'back', animated: true});
-    } else {
+
+    if (direction === 0) {
       finish = this.setRoot(id, params, commonOpts);
+    } else {
+      const viewController = this.views.find(v => matches(v, id, params));
+
+      if (viewController) {
+        finish = this.popTo(viewController, {...commonOpts, direction: 'back'});
+      } else if (direction === 1) {
+        finish = this.push(id, params, commonOpts);
+      } else if (direction === -1) {
+        finish = this.setRoot(id, params, {...commonOpts, direction: 'back', animated: true});
+      }
     }
     return promise;
   }
@@ -307,8 +310,8 @@ export class Nav implements NavOutlet {
       const router = this.win.document.querySelector('ion-router');
       if (router) {
         const direction = (result.direction === 'back')
-          ? RouterDirection.Back
-          : RouterDirection.Forward;
+          ? RouterIntent.Back
+          : RouterIntent.Forward;
 
         router.navChanged(direction);
       }

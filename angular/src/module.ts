@@ -31,6 +31,7 @@ const DECLARATIONS = [
   d.Grid,
   d.Header,
   d.HideWhen,
+  d.Img,
   d.InfiniteScroll,
   d.InfiniteScrollContent,
   d.Input,

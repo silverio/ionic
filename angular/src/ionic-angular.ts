@@ -1,5 +1,3 @@
-/*tslint:disable*/
-import './ionic';
 import { IonicWindow } from './types/interfaces';
 
 const win = (window as IonicWindow);

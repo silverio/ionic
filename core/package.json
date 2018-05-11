@@ -14,9 +14,9 @@
     "progressive web app",
     "pwa"
   ],
-  "module": "dist/collection/index.js",
-  "main": "dist/ionic.js",
-  "types": "dist/types/interface.d.ts",
+  "module": "dist/esm/index.js",
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.ts",
   "collection": "dist/collection/collection-manifest.json",
   "files": [
     "dist/"

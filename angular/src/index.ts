@@ -17,8 +17,8 @@ export * from './types/interfaces';
 export * from './util/ionic-router-reuse-strategy';
 
 /*tslint:disable*/
-// import '@ionic/core';
+import '@ionic/core';
 import './ionic-angular';
 
-// import { defineCustomElements } from '@ionic/core';
-// defineCustomElements(window);
+import { defineCustomElements } from '@ionic/core';
+defineCustomElements(window);

@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "npm run copy-ionic-angular && ng",
-    "start": "npm run copy-ionic-angular && ng serve",
+    "serve": "npm run copy-ionic-angular && ng serve",
+    "serve.aot": "npm run copy-ionic-angular && ng serve --aot",
     "build": "npm run copy-ionic-angular && ng build",
+    "build.aot": "npm run copy-ionic-angular && ng build --aot",
     "build.prod": "npm run copy-ionic-angular && ng build --prod --aot",
     "test": "npm run copy-ionic-angular && ng test",
     "lint": "npm run copy-ionic-angular && ng lint",

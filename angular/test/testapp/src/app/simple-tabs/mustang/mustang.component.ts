@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'mustang-page',
+  selector: 'app-mustang',
   template: `
     <ion-header>
       <ion-toolbar>
@@ -14,4 +14,4 @@ import { Component } from '@angular/core';
     </ion-content>
   `
 })
-export class MustangPage {}
+export class MustangComponent {}

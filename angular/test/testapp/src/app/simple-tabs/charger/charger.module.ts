@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { IonicModule } from '@ionic/angular';
-import { ChargerPage } from './charger.page';
+import { ChargerComponent } from './charger.component';
 
 
 @NgModule({
@@ -11,7 +11,7 @@ import { ChargerPage } from './charger.page';
     IonicModule
   ],
   declarations: [
-    ChargerPage
+    ChargerComponent
   ]
 })
 export class ChargerModule {}

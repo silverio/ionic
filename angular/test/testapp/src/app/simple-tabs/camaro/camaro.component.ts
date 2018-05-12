@@ -2,16 +2,16 @@ import { Component } from '@angular/core';
 
 
 @Component({
-  selector: 'charger-page',
+  selector: 'app-camaro',
   template: `
     <ion-header>
       <ion-toolbar>
-        <ion-title>Charger</ion-title>
+        <ion-title>Camaro</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content padding>
-      Charger
+      Camaro
     </ion-content>
   `
 })
-export class ChargerPage {}
+export class CamaroComponent {}

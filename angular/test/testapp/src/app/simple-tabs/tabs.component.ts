@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'tabs-root',
+  selector: 'app-tabs',
   templateUrl: 'tabs.html'
 })
-export class TabsPageComponent {}
+export class TabsComponent {}

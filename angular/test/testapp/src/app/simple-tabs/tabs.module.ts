@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { IonicModule } from '@ionic/angular';
-import { TabsPageComponent } from './tabs.component';
+import { TabsComponent } from './tabs.component';
 import { TabsRoutingModule } from './tabs-routing.module';
 
 
@@ -13,7 +13,7 @@ import { TabsRoutingModule } from './tabs-routing.module';
     TabsRoutingModule,
   ],
   declarations: [
-    TabsPageComponent,
+    TabsComponent,
   ]
 })
 export class TabsModule {}

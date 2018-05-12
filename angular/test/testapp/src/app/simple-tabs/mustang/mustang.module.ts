@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { IonicModule } from '@ionic/angular';
-import { MustangPage } from './mustang.page';
+import { MustangComponent } from './mustang.component';
 
 
 @NgModule({
@@ -11,7 +11,7 @@ import { MustangPage } from './mustang.page';
     IonicModule
   ],
   declarations: [
-    MustangPage
+    MustangComponent
   ]
 })
 export class MustangModule {}

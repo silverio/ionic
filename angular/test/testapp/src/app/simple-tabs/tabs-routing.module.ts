@@ -2,31 +2,31 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
-import { TabsPageComponent } from './tabs.component';
+import { TabsComponent } from './tabs.component';
 
-import { CamaroPage } from './camaro/camaro.page';
-import { MustangPage } from './mustang/mustang.page';
-import { ChargerPage } from './charger/charger.page';
+import { CamaroComponent } from './camaro/camaro.component';
+import { MustangComponent } from './mustang/mustang.component';
+import { ChargerComponent } from './charger/charger.component';
 
 const routes: Routes = [
   {
     path: 'tabs',
-    component: TabsPageComponent,
+    component: TabsComponent,
     children: [
       {
         path: 'mustang',
         outlet: 'tab1',
-        component: MustangPage
+        component: MustangComponent
       },
       {
         path: 'camaro',
         outlet: 'tab2',
-        component: CamaroPage
+        component: CamaroComponent
       },
       {
         path: 'charger',
         outlet: 'tab3',
-        component: ChargerPage
+        component: ChargerComponent
       }
     ]
   },
@@ -43,9 +43,9 @@ const routes: Routes = [
     IonicModule
   ],
   declarations: [
-    MustangPage,
-    CamaroPage,
-    ChargerPage
+    MustangComponent,
+    CamaroComponent,
+    ChargerComponent
   ],
   exports: [
     RouterModule

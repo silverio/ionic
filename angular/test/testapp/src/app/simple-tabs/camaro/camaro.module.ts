@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { IonicModule } from '@ionic/angular';
-import { CamaroPage } from './camaro.page';
+import { CamaroComponent } from './camaro.component';
 
 
 @NgModule({
@@ -11,7 +11,7 @@ import { CamaroPage } from './camaro.page';
     IonicModule
   ],
   declarations: [
-    CamaroPage
+    CamaroComponent
   ]
 })
 export class CamaroModule {}

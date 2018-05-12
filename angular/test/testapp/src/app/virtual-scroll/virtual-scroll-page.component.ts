@@ -5,7 +5,7 @@ import { ToastController } from '@ionic/angular';
 @Component({
   selector: 'app-virtual-scroll-page',
   template: `
-  <ion-app>
+    <ion-app>
       <ion-header>
         <ion-toolbar>
           <ion-title>Test</ion-title>
@@ -16,20 +16,20 @@ import { ToastController } from '@ionic/angular';
 
       <ion-virtual-scroll [items]="items" approxItemHeight="320px">
 
-    <ion-card *virtualItem="let item; let itemBounds = bounds;">
+        <ion-card *virtualItem="let item; let itemBounds = bounds;">
 
-      <div>
-        <img [src]="item.imgSrc" [height]="item.imgHeight" [alt]="item.name">
-      </div>
+          <div>
+            <img [src]="item.imgSrc" [height]="item.imgHeight" [alt]="item.name">
+          </div>
 
-      <ion-card-header>
-        <ion-card-title>{{ item.name }}</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>{{ item.content }}</ion-card-content>
+          <ion-card-header>
+            <ion-card-title>{{ item.name }}</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>{{ item.content }}</ion-card-content>
 
-    </ion-card>
+        </ion-card>
 
-  </ion-virtual-scroll>
+      </ion-virtual-scroll>
 
     </ion-content>
   </ion-app>`

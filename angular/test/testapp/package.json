@@ -2,12 +2,14 @@
   "name": "testapp",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "ng": "npm run copy-ionic-angular && ng",
+    "start": "npm run copy-ionic-angular && ng serve",
+    "build": "npm run copy-ionic-angular && ng build",
+    "build.prod": "npm run copy-ionic-angular && ng build --prod --aot",
+    "test": "npm run copy-ionic-angular && ng test",
+    "lint": "npm run copy-ionic-angular && ng lint",
+    "e2e": "npm run copy-ionic-angular && ng e2e",
+    "copy-ionic-angular": "node ../../scripts/link-copy.js ionic/angular/test/testapp"
   },
   "private": true,
   "dependencies": {

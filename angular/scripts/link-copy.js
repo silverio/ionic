@@ -28,4 +28,5 @@ ionicAngularPkgJson.files.forEach(f => {
 });
 
 const prjReadme = path.join(prjIonicAngular, 'README.md');
-fs.writeFileSync(prjReadme, '@ionic/angular copied from ' + ionicAngularDir);
+console.log('readme:', prjReadme);
+fs.writeFileSync(prjReadme, '@ionic/angular copied from ' + ionicAngularDir + ', ' + new Date());

@@ -1,5 +1,5 @@
 // export module
-export { IonicModule } from './module';
+export { IonicModule } from './ionic-module';
 
 // export auto generated directive
 export * from './directives/proxies';

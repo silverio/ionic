@@ -26,8 +26,8 @@
     "clean": "node scripts/clean.js",
     "clean-generated": "node ./scripts/clean-generated.js",
     "compile": "./node_modules/.bin/ngc",
-    "ionic-core": "node ../core/node_modules/.bin/stencil build",
-    "ionic-core-dev": "node ../core/node_modules/.bin/stencil build --dev",
+    "ionic-core": "stencil build",
+    "ionic-core-dev": "stencil build --dev",
     "lint": "tslint --project .",
     "prerelease": "npm run validate && np prerelease --yolo --any-branch --tag next",
     "test": "echo 'angular no tests yet'",
@@ -40,7 +40,8 @@
     "dist/"
   ],
   "dependencies": {
-    "@ionic/core": "4.0.0-alpha.6"
+    "@ionic/core": "4.0.0-alpha.6",
+    "@stencil/core": "^0.9.0-0"
   },
   "devDependencies": {
     "@angular/common": "^6.0.0",

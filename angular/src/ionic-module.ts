@@ -1,9 +1,12 @@
-import { ModuleWithProviders, NgModule } from '@angular/core';
+import { APP_INITIALIZER, ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { appInitialize } from './app-initialize';
+import { ConfigToken } from './providers/config';
 import * as c from './directives';
 import * as d from './directives/proxies';
 import * as p from './providers';
+
 
 const DECLARATIONS = [
   // proxies
@@ -122,6 +125,7 @@ const PROVIDERS = [
   p.DomController
 ];
 
+
 @NgModule({
   declarations: DECLARATIONS,
   exports: DECLARATIONS,
@@ -129,11 +133,30 @@ const PROVIDERS = [
   imports: [CommonModule]
 })
 export class IonicModule {
-  static forRoot(_config?: { [key: string]: any }): ModuleWithProviders {
+  static forRoot(config?: { [key: string]: any }): ModuleWithProviders {
     return {
       ngModule: IonicModule,
       providers: [
-        ...PROVIDERS,
+        {
+          provide: ConfigToken,
+          useValue: config
+        },
+        {
+          provide: APP_INITIALIZER,
+          useFactory: appInitialize,
+          multi: true,
+          deps: [
+            ConfigToken
+          ]
+        },
+        // {
+        //   provide: Config,
+        //   useFactory: setupConfig,
+        //   deps: [
+        //     ConfigToken
+        //   ]
+        // },
+        ...PROVIDERS
       ]
     };
   }

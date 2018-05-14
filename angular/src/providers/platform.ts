@@ -41,7 +41,6 @@ export class Platform {
   resize = new EventEmitter<Event>();
 
   constructor() {
-
     proxyEvent(this.pause, document, 'pause');
     proxyEvent(this.resume, document, 'resume');
     proxyEvent(this.backButton, document, 'backbutton');

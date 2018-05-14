@@ -115,6 +115,7 @@ const DECLARATIONS = [
 const PROVIDERS = [
   p.ActionSheetController,
   p.AlertController,
+  p.Config,
   p.LoadingController,
   p.PickerController,
   p.ToastController,
@@ -149,13 +150,6 @@ export class IonicModule {
             ConfigToken
           ]
         },
-        // {
-        //   provide: Config,
-        //   useFactory: setupConfig,
-        //   deps: [
-        //     ConfigToken
-        //   ]
-        // },
         ...PROVIDERS
       ]
     };

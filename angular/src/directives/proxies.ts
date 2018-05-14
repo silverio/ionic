@@ -644,12 +644,12 @@ export class SplitPane {
 }
 
 export declare interface Tab extends StencilComponents.IonTab {}
-@Directive({selector: 'ion-tab', inputs: ['active', 'btnId', 'delegate', 'label', 'href', 'icon', 'badge', 'badgeStyle', 'component', 'name', 'disabled', 'selected', 'show', 'tabsHideOnSubPages'], outputs: ['ionSelect']})
+@Directive({selector: 'ion-tab', inputs: ['active', 'btnId', 'delegate', 'label', 'href', 'icon', 'badge', 'badgeColor', 'component', 'name', 'disabled', 'selected', 'show', 'tabsHideOnSubPages'], outputs: ['ionSelect']})
 export class Tab {
   ionSelect: EventEmitter<any>;
   constructor(r: ElementRef) {
     proxyMethods(this, r, ['getTabId', 'setActive']);
-    proxyInputs(this, r, ['active', 'btnId', 'delegate', 'label', 'href', 'icon', 'badge', 'badgeStyle', 'component', 'name', 'disabled', 'selected', 'show', 'tabsHideOnSubPages']);
+    proxyInputs(this, r, ['active', 'btnId', 'delegate', 'label', 'href', 'icon', 'badge', 'badgeColor', 'component', 'name', 'disabled', 'selected', 'show', 'tabsHideOnSubPages']);
     proxyOutputs(this, ['ionSelect']);
   }
 }
@@ -717,6 +717,9 @@ export class Toolbar {
 }
 
 export declare interface ToolbarTitle extends StencilComponents.IonTitle {}
-@Directive({selector: 'ion-title'})
+@Directive({selector: 'ion-title', inputs: ['mode', 'color']})
 export class ToolbarTitle {
+  constructor(r: ElementRef) {
+    proxyInputs(this, r, ['mode', 'color']);
+  }
 }

@@ -1,7 +1,7 @@
-
 import { EventEmitter, Injectable } from '@angular/core';
-import { proxyEvent } from '../util/util';
 import { PlatformConfig, detectPlatforms } from '@ionic/core';
+import { proxyEvent } from '../util/util';
+
 
 @Injectable()
 export class Platform {

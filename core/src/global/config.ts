@@ -8,12 +8,12 @@ export class Config {
 
   }
 
-  'get'(key: string, fallback?: any): any {
+  get(key: string, fallback?: any): any {
     const value = this.m.get(key);
     return (value !== undefined) ? value : fallback;
   }
 
-  'getBoolean'(key: string, fallback = false): boolean {
+  getBoolean(key: string, fallback = false): boolean {
     const val = this.m.get(key);
     if (val === undefined) {
       return fallback;
@@ -24,12 +24,12 @@ export class Config {
     return !!val;
   }
 
-  'getNumber'(key: string, fallback?: number): number {
+  getNumber(key: string, fallback?: number): number {
     const val = parseFloat(this.m.get(key));
     return isNaN(val) ? (fallback !== undefined ? fallback : NaN) : val;
   }
 
-  'set'(key: string, value: any) {
+  set(key: string, value: any) {
     this.m.set(key, value);
   }
 }
